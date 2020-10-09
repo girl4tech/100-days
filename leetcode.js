@@ -11,9 +11,7 @@
 // constraints :
 // 1 <= t <= 109
 // Each test case will call ping with strictly increasing values of t.
-// 
-
-At most 104 calls will be made to ping.
+// At most 104 calls will be made to ping.
 
 
 class RecentCounter {
