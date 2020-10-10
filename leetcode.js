@@ -39,4 +39,47 @@ class RecentCounter {
     };
 }
 
+// Complement of Base 10 Integer Problem
 
+// Every non-negative integer N has a binary representation.  For example, 5 can be represented as "101" in binary, 11 as "1011" in binary, and so on.  
+// Note that except for N = 0, there are no leading zeroes in any binary representation.
+// The complement of a binary representation is the number in binary you get when changing every 1 to a 0 and 0 to a 1.  
+// For example, the complement of "101" in binary is "010" in binary.
+// For a given number N in base-10, return the complement of it's binary representation as a base-10 integer.
+
+var bitwiseComplement = function(N) {
+    let sum = 0;
+    //convert to binary
+    let binary = [];
+    let k = 1;
+    while(!N<1){
+        let quotient = Math.floor(N / 2);
+        let remainder = N % 2;
+        if(remainder===0){
+            binary.unshift(0);
+        }
+        else {
+            binary.unshift(1);
+        }
+        N = quotient;
+    }
+    if(binary.length === 0) return 1; 
+    
+    //find complement
+    for(var i=0; i<binary.length; i++){
+        if(binary[i]===0){
+            binary[i] = 1;
+        }
+        else{
+            binary[i] = 0;
+        }
+    } 
+    //convert complemenet to base 10
+    for(var j=0; j<binary.length; j++){
+        let exponent = binary.length - k;
+        let power = Math.pow(2, exponent);
+        sum += binary[j] * power;
+        k += 1;
+    }    
+    return sum;
+};
