@@ -102,3 +102,18 @@ var search = function(nums, target) {
     }   
     return -1;     
 };
+
+// Given a string s, remove duplicate letters so that every letter appears once and only once. 
+// You must make sure your result is the smallest in lexicographical order among all possible results.
+
+var removeDuplicateLetters = function(s) {
+    let uniqueChars = [];
+    let chars = s.split('');
+    for(var i=0; i<chars.length; i++){
+        if(!uniqueChars.includes(chars[i])){
+            uniqueChars.push(chars[i]);
+        }
+    }
+    let result = uniqueChars.sort();
+    return result.toString().replace(/,/g,"");
+};
