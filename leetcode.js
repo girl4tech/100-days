@@ -117,3 +117,34 @@ var removeDuplicateLetters = function(s) {
     let result = uniqueChars.sort();
     return result.toString().replace(/,/g,"");
 };
+
+// Given two strings A and B of lowercase letters, return true if you can swap two letters in A so the result is equal to B, otherwise, return false.
+// Swapping letters is defined as taking two indices i and j (0-indexed) such that i != j 
+// and swapping the characters at A[i] and A[j]. For example, swapping at indices 0 and 2 in "abcd" results in "cbad".
+
+var buddyStrings = function(A, B) {
+    if(A.length != B.length) return false;
+    if(A.length < 2) return false;
+    if(A.length === 2){
+        let temp = A[0];
+        A[0] = A[1];
+        A[1] = temp;
+        if(A===B) return true;
+    }  
+    let count = 0;
+    let locations = [];
+    for(var index = 0; index < A.length; index++) {
+        if(A[index] != B[index]){
+            count++;
+            locations.push(index);
+        }
+    }
+    if(count != 2 && locations.length != 2){
+        return false;
+    }
+    if(A[locations[0]] == B[locations[1]] && 
+       A[locations[1]] == B[locations[0]]) {
+        return true;
+    }
+    return false;
+};
