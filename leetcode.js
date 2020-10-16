@@ -156,3 +156,9 @@ const runningSum = function(nums) {
   var sum = 0;
   return nums.map(x => sum += x)
 }
+
+// Given a valid (IPv4) IP address, return a defanged version of that IP address.
+
+var defangIPaddr = function(address) {
+    return address.split('.').join('[.]');
+};
