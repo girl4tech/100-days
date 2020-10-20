@@ -216,3 +216,28 @@ public int NumJewelsInStones(string J, string S) {
 		}
 		return numb;
 }
+
+// Given an array of integers nums.
+// A pair (i,j) is called good if nums[i] == nums[j] and i < j.
+// Return the number of good pairs.
+
+public int NumIdenticalPairs(int[] nums)
+{
+	var result = 0;
+	var currIndex = 1;
+	var currValue = nums[0];
+	var iCount = nums.Length;
+	for (var i = currIndex; i <= iCount; i++)
+	{
+		if (i == iCount) 
+		{
+			if (++currIndex == iCount)
+				break;
+			i = currIndex;
+			currValue = nums[i-1];
+		}
+		if (nums[i] == currValue)
+			result++;
+	}
+	return result;
+}
