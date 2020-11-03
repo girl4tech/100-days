@@ -306,3 +306,22 @@ var multiples3or5 = function(){
     return sum;
 }
 console.log(multiples3or5());
+
+// Codewars - Find the odd int
+function findOdd(A) {
+  let res = 0;
+  for(let i=0; i<A.length; i++){
+    res = res ^ A[i];
+  }
+  return res;
+}
+
+// Codewars - Count characters in your string
+function count (string) { 
+  let result = {};
+  if(string==="")return result;
+  for(let i=0; i<string.length; i++){
+    result[string[i]] = (result[string[i]] || 0) + 1;
+  }
+   return result;
+}
