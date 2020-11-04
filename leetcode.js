@@ -341,5 +341,6 @@ function evenFibSum(){
     sum += secondNum % 2 === 0 ? secondNum : 0;
 
    }
+// answer : 4613732
     console.log(sum);
 }
