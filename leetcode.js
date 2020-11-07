@@ -360,3 +360,14 @@ var numberOfSteps  = function(num) {
     }
     return steps;
 };
+
+// Given an integer number n, return the difference between the product of its digits and the sum of its digits.
+var subtractProductAndSum = function(n) {
+    const digits = n.toString()
+    let sum = 0, product = 1
+    for (let digit of digits) {
+        sum += Number(digit)
+        product *= Number(digit)
+    }
+    return product - sum
+};
