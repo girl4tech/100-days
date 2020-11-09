@@ -385,3 +385,26 @@ var removeDuplicates = function(nums) {
     }
     return i + 1;
 };
+
+// Given a string representing a numerical value and a unit, e.g. "12px", return the value and units 
+function valAndUnits(s){
+    let units = [];
+    let answer = {};
+    for(let i=0; i<s.length; i++){
+        if(s.charCodeAt(i) <=122 && s.charCodeAt(i) >=97 || s[i] === '%'){
+            units.push(s[i]);
+        }
+    } 
+   answer.val = parseFloat(s);
+   answer.units = units.toString().replace(/,/g, '');
+   return answer;
+}
+// refactored solution :
+function valAndUnits(s) {
+  var val = parseFloat(s);
+  return {
+    val: val,
+    units: s.replace(val, '').trim()
+  }
+}
+
