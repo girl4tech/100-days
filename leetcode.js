@@ -408,3 +408,24 @@ function valAndUnits(s) {
   }
 }
 
+// We all want to climb the leaderboard. Even given some of the massive scores on there, it's nice to know how close you are...
+// In this kata you will be given a username and their score, your score (not your real score) and you need to 
+// calculate how many kata you need to complete to beat their score, by 1 point exactly.
+// Note : this kata has some reported issues with problem description and testing
+function leaderB(user, user_score, your_score){
+  let difference = user_score - your_score; 
+  if(difference===0) return "Only need one!"
+  if(Math.sign(difference) < 0 ) return "Winning!";
+  let div = Math.trunc(difference / 3);
+  if(div*3===difference){
+      if(difference > 1000){
+          return `To beat ${user}'s score, I must complete ${div} Beta kata and 0 8kyu kata. Dammit!`;
+      }
+      return `To beat ${user}'s score, I must complete ${div} Beta kata and 0 8kyu kata.`;
+  }
+  let kata = difference - (div*3);
+  if(difference > 1000){
+      return `To beat ${user}'s score, I must complete ${div} Beta kata and ${kata} 8kyu kata. Dammit!`;
+  }
+  return `To beat ${user}'s score, I must complete ${div} Beta kata and ${kata} 8kyu kata.`;
+}
