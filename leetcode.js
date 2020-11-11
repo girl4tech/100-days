@@ -429,3 +429,19 @@ function leaderB(user, user_score, your_score){
   }
   return `To beat ${user}'s score, I must complete ${div} Beta kata and ${kata} 8kyu kata.`;
 }
+
+// Given a non-negative integer num, return the number of steps to reduce it to zero. 
+// If the current number is even, you have to divide it by 2, otherwise, you have to subtract 1 from it.
+var numberOfSteps  = function(num) {
+    let steps = 0
+    while(num>0) {
+        const target = num/2
+        if (target === Math.floor(target)) {
+            num/=2
+        }else{
+            num--
+        }
+        steps++        
+    }
+    return steps
+};
