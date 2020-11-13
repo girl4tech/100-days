@@ -445,3 +445,21 @@ var numberOfSteps  = function(num) {
     }
     return steps
 };
+
+// Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.
+var toLowerCase = function(str) {
+    let result = '';
+    for (let i = 0; i < str.length; i += 1) {
+        let ascii = str.charCodeAt(i);
+        let toLower = ascii >= 65 && ascii <= 90  ? 32 : 0;
+        result += String.fromCharCode(ascii + toLower);
+    }  
+    return result;
+};
+//optimization using destructuring and map
+var toLowerCase = function(str) {
+    return [...str].map(s => {
+        const code = s.charCodeAt()
+        return (code >= 65 && code <= 90) ? String.fromCharCode(code + 32) : s
+    }).join('')
+};
