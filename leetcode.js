@@ -463,3 +463,16 @@ var toLowerCase = function(str) {
         return (code >= 65 && code <= 90) ? String.fromCharCode(code + 32) : s
     }).join('')
 };
+
+// Given a string s and an integer array indices of the same length.
+//The string s will be shuffled such that the character at the ith position moves to indices[i] in the shuffled string.
+function restoreString(s, indices) {
+  let str = s.split('');
+  let obj = {};
+
+  for (let i = 0; i < str.length; i++) {
+    obj[indices[i]] = str[i];
+  }
+
+  return Object.values((obj)).join('');
+}
