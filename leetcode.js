@@ -476,3 +476,13 @@ function restoreString(s, indices) {
 
   return Object.values((obj)).join('');
 }
+
+// Given an array arr of integers, check if there exists two integers N and M such that N is the double of M ( i.e. N = 2 * M).
+var checkIfExist = function(arr) {
+    for(let i=0; i<arr.length; i++){
+        if(arr.includes(2*arr[i])){
+            return true;
+        }
+    }
+    return false;
+};
