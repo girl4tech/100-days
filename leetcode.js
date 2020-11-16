@@ -486,3 +486,22 @@ var checkIfExist = function(arr) {
     }
     return false;
 };
+
+// Given an array of integers arr, return true if and only if it is a valid mountain array.
+var validMountainArray = function(arr) {
+    // find peak then go up and down to ensure mountain
+    let M = arr.length;
+    let i =0;
+    //going up
+    while(i+1 < M && arr[i] < arr[i+1]){
+        i++;
+    }
+    if(i==0 || i== M-1){
+        return false;
+    }
+    //going down
+    while(i+1 < M && arr[i] > arr[i+1]){
+        i++;
+    }
+    return i == M-1;
+};
