@@ -505,3 +505,18 @@ var validMountainArray = function(arr) {
     }
     return i == M-1;
 };
+
+// Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+const moveZeroes = nums => {
+  let i = 0,  j = 0;
+  while (i < nums.length) {
+    if (nums[i] != 0) {
+      let temp = nums[i];
+      nums[i] = 0;
+      nums[j] = temp;
+      j++;
+    }
+    i++;
+  }
+  return;
+};
