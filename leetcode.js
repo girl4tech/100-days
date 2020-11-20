@@ -555,3 +555,27 @@ var scoreToTally = function(score){
    return result;
     
 };
+
+// You may recall that an array arr is a mountain array if and only if:
+// arr.length >= 3
+// There exists some index i (0-indexed) with 0 < i < arr.length - 1 such that:
+// arr[0] < arr[1] < ... < arr[i - 1] < arr[i]
+// arr[i] > arr[i + 1] > ... > arr[arr.length - 1]
+// Given an integer array arr, return the length of the longest subarray, which is a mountain. Return 0 if there is no mountain subarray.
+var longestMountain = function(A) {
+  let max = 0
+  let i = 0
+  while(i + 1 < A.length){
+    while(A[i] >= A[i+1])
+      i++
+    const start = i
+    while(A[i] < A[i+1])
+      i++
+    if(!(A[i] > A[i+1]))
+      continue
+    while(A[i] > A[i+1])
+      i++
+    max = Math.max(max, i+1 - start)
+  }
+  return max
+};
