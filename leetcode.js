@@ -579,3 +579,22 @@ var longestMountain = function(A) {
   }
   return max
 };
+
+// Given a string s, the power of the string is the maximum length of a non-empty substring that contains only one unique character.
+// Return the power of the string.
+var maxPower = function(s) {
+    
+    let counter = 0;
+    let max = 0;
+    
+    for(let i=0; i<s.length; i++){
+        if(s[i]===(s[i-1] || s[0])){
+            counter++;
+        }else{
+            max = Math.max(max, counter);
+            counter = 1;
+        }
+    }
+    return Math.max(counter, max);
+
+};
