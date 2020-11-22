@@ -598,3 +598,11 @@ var maxPower = function(s) {
     return Math.max(counter, max);
 
 };
+
+// You are climbing a staircase. It takes n steps to reach the top.
+// Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+var climbStairs = function(n) {
+    let sqrt5=Math.sqrt(5);
+    let fibn=Math.pow((1+sqrt5)/2,n+1)-Math.pow((1-sqrt5)/2,n+1);
+    return (fibn/sqrt5);
+};
