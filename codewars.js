@@ -22,3 +22,18 @@ function decipherThis(str) {
   
   return result.join(' ')
 };
+
+// You're saying good-bye your best friend , See you next happy year .
+// Happy Year is the year with only distinct digits , (e.g) 2018
+function nextHappyYear(year){
+  let numSet = new Set();
+  while(numSet.size!==4){
+    //resetting Set to size=0 in order to prepare for next year++
+    numSet = new Set();
+    year++
+    let newArr = year.toString().split('').map(Number);
+    newArr.map(x=>numSet.add(x));
+  }
+  //this is my fave line :)
+  return parseInt([...numSet].join(''));
+}
