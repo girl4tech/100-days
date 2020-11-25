@@ -634,3 +634,20 @@ var twoSum = function(nums, target) {
     }
     return [0,0];
 };
+
+// Given a linked list, swap every two adjacent nodes and return its head.
+// You may not modify the values in the list's nodes. Only nodes itself may be changed.
+var swapPairs = function(head) {
+  if (!head || !head.next) {
+      return head;
+  }  
+  const second = head;
+  const first = head.next;
+  const rest = head.next.next;
+
+  // begin swap
+  first.next = second;
+  second.next = swapPairs(rest);  
+  
+  return first;
+};
