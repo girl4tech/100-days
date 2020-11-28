@@ -48,3 +48,27 @@ function findScreenHeight(width, ratio) {
   let height = (width*bottom)/top;
   return(`${width}x${height}`);
 }
+// Is similar to factorial of a number, In primorial, not all the natural numbers get multiplied, 
+// only prime numbers are multiplied to calculate the primorial of a number. It's denoted with P# and 
+// it is the product of the first n prime numbers.
+function numPrimorial(n) {
+    let i = 1;
+    let counter = 2;
+    while (n != 0) {
+        if (isPrime(counter)) {
+            i *= counter;          
+            n--;
+        }
+        counter++;
+    }
+    return i;
+}
+//create function to check if number is prime first
+function isPrime(m) {
+      for (var j = 2; j < m; j++) {
+          if (m % j == 0) {
+              return false;
+           }
+      }
+      return true;
+}
