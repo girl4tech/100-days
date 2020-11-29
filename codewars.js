@@ -72,3 +72,17 @@ function isPrime(m) {
       }
       return true;
 }
+// Check if a given input is a valid triangle number. Return true if it is, false if it is not (note that any non-integers, 
+// including non-number types, are not triangle numbers). You are encouraged to develop an effective algorithm: test cases include really big numbers.
+function isTriangleNumber(number) {
+  if (number < 0) return false
+  if (number === 0) return true;
+  let sum=0;
+  for(let i=1; i<=number; i++){
+    sum+=i;      
+    if(sum===number){       
+      return true; 
+    }
+  }
+  return false;
+}
