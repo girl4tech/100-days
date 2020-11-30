@@ -86,3 +86,19 @@ function isTriangleNumber(number) {
   }
   return false;
 }
+
+// Given a List [] of n integers , find minimum number to be inserted in a list, so that sum of all elements of 
+// list should equal the closest prime number.
+function minimumNumber(numbers){
+  let sum = numbers.reduce((a,b)=>a+b);
+  let minNum = 0;
+  for(let i=2; i<sum; i++){
+    if((sum)%i===0){
+      sum++
+      minNum++
+      //reset i so we can loop through next number
+      i=2;
+    }
+  } 
+  return minNum;
+}
