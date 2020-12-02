@@ -119,3 +119,4 @@ function validParentheses(parens){
   }
   return (valid.length === 0);
 }
+.
