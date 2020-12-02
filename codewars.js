@@ -119,4 +119,51 @@ function validParentheses(parens){
   }
   return (valid.length === 0);
 }
-.
+
+// Create a RomanNumerals class that can convert a roman numeral to and from an integer value. 
+// It should follow the API demonstrated in the examples below. Multiple roman numeral values will be tested for each helper method.
+// Modern Roman numerals are written by expressing each digit separately starting with the left 
+// most digit and skipping any digit with a value of zero. In Roman numerals 1990 is rendered: 1000=M, 900=CM, 90=XC; resulting in MCMXC. 
+// 2008 is written as 2000=MM, 8=VIII; or MMVIII. 1666 uses each Roman symbol in descending order: MDCLXVI.
+class RomanNumerals {
+  // using static for utility functions
+  static numerals() {
+    return [
+      { numeral: 'M', value: 1000 },
+      { numeral: 'CM', value: 900 },
+      { numeral: 'D', value: 500 },
+      { numeral: 'CD', value: 400 },
+      { numeral: 'C', value: 100 },
+      { numeral: 'XC', value: 90 },
+      { numeral: 'L', value: 50 },
+      { numeral: 'XL', value: 40 },
+      { numeral: 'X', value: 10 },
+      { numeral: 'IX', value: 9 },
+      { numeral: 'V', value: 5 },
+      { numeral: 'IV', value: 4 },
+      { numeral: 'I', value: 1 },
+    ];
+  }
+  
+  static toRoman(n) {
+    let result = '';
+    for (const { numeral, value } of this.numerals()) {
+      while (n >= value) {
+        result += numeral;
+        n -= value;
+      }
+    }  
+    return result;
+  }
+  
+  static fromRoman(s) {
+    let result = 0; 
+    for (const { numeral, value } of this.numerals()) {
+      while (s.startsWith(numeral)) {
+        result += value;
+        s = s.replace(numeral, '');
+      }
+    }  
+    return result;
+  }
+}
