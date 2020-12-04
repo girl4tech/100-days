@@ -186,3 +186,9 @@ function findNb(m) {
     return -1;
   }
 }
+// Define a function that takes one integer argument and returns logical value true or false depending on if the integer is a prime.
+const isPrime = num => {
+    for(let i = 2, s = Math.sqrt(num); i <= s; i++)
+        if(num % i === 0) return false; 
+    return num > 1;
+}
