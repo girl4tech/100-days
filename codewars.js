@@ -192,3 +192,20 @@ const isPrime = num => {
         if(num % i === 0) return false; 
     return num > 1;
 }
+// https://www.codewars.com/kata/5a3f2925b6cfd78fb0000040
+function solve(s){
+  if(s.length%2 == 1) return -1;
+  let count = 0, num = 0;
+  for(let i=0;i<s.length;i++) {
+    if(s[i] == '(') count++;
+    else if (s[i] == ')') {
+      if(count > 0) count--;
+        else {
+          count++;
+          num++;
+        }
+    }
+  }
+  num += count>>1;
+  return num;
+} 
