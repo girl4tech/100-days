@@ -209,3 +209,19 @@ function solve(s){
   num += count>>1;
   return num;
 } 
+// https://www.codewars.com/kata/564057bc348c7200bd0000ff
+function thirt(n) {
+   const sequence=[1, 10, 9, 12, 3, 4]
+   let sum=n;
+   while(1){
+       let temp=sum
+       // convert given num to digits array and reverse to multiply correct pairs
+       sum=sum.toString().split``.reverse().join``.split``.map((value,index)=>{
+         value=value*sequence[index%6]
+         return value
+       }).reduce((a,b)=>a+b,0)
+     //ensure it is stationary 
+       if (sum===temp){break}
+     }
+   return sum
+}
