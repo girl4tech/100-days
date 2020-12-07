@@ -225,3 +225,19 @@ function thirt(n) {
      }
    return sum
 }
+// https://www.codewars.com/kata/545cedaa9943f7fe7b000048
+function isPangram(string){
+  //refactor with ascii values instead
+  let lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+                 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+                 'u', 'v','w', 'x', 'y', 'z'];
+  let uppercase = ['A', 'B','C','D','E','F',
+                 'G','H','I','J','K','L','M','N','O','P','Q','R',
+                 'S','T','U','V','W','X','Y','Z'];
+  for(let i=0; i<lowercase.length; i++){
+    if(!string.includes(lowercase[i]) && !string.includes(uppercase[i])){
+      return false;
+    }
+  }
+  return true;
+}
