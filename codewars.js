@@ -241,3 +241,18 @@ function isPangram(string){
   }
   return true;
 }
+// https://www.codewars.com/kata/54521e9ec8e60bc4de000d6c/javascript
+var maxSequence = function(arr){
+  var maxSum = 0;
+  var currentSum = 0;
+  
+  for (var i = 0; i < arr.length; i++) {
+    currentSum += arr[i];
+    
+    if (currentSum <= 0) {
+      currentSum = 0;
+    }
+    maxSum = Math.max(maxSum, currentSum);
+  }  
+  return maxSum;
+}
