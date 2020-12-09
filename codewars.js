@@ -256,3 +256,13 @@ var maxSequence = function(arr){
   }  
   return maxSum;
 }
+
+// https://www.codewars.com/kata/5ce399e0047a45001c853c2b
+function partsSums(ls) {
+  let result = [];
+  result.push(ls.reduce((a, b) => a + b, 0));
+  for ( i = 0; i < ls.length; i++){
+      result.push((result[result.length-1]) - ls[i] );
+  };
+  return result
+}
