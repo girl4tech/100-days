@@ -266,3 +266,12 @@ function partsSums(ls) {
   };
   return result
 }
+// https://www.codewars.com/kata/5541f58a944b85ce6d00006a
+function productFib(prod){
+  let n = 0, np = 1;  
+  while(n*np < prod) {
+    np = n + np;
+    n = np - n;
+  }
+  return [n, np, n*np === prod];
+}
