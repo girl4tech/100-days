@@ -275,3 +275,14 @@ function productFib(prod){
   }
   return [n, np, n*np === prod];
 }
+// https://www.codewars.com/kata/55143152820d22cdf00001bb
+function number9(n){
+  let count = 0;
+  for (let i = 1; i <= n; i *= 10){
+    let curr = Math.floor(n / i);
+    count += Math.floor( curr / 10) * i;
+    if( curr % 10 === 9)
+      count += (n % i) + 1;
+  };
+  return count;
+};
