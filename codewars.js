@@ -286,3 +286,6 @@ function number9(n){
   };
   return count;
 };
+
+// https://www.codewars.com/kata/5fc4349ddb878a0017838d0f
+let redKnight = (N, P) => [((N+P)%2 ? 'Black' : 'White'), P*2]; 
