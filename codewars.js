@@ -289,3 +289,18 @@ function number9(n){
 
 // https://www.codewars.com/kata/5fc4349ddb878a0017838d0f
 let redKnight = (N, P) => [((N+P)%2 ? 'Black' : 'White'), P*2]; 
+
+// https://www.codewars.com/kata/58a6568827f9546931000027/javascript
+function numberOfCarries(a, b) {
+ let res = 0;
+  let carr = 0;
+  
+  while (a+b){
+    carr = +(a % 10 + b % 10 + carr > 9);
+    res += carr ;
+    
+    a = a / 10 | 0 ;
+    b = b / 10 | 0 ;
+  }
+  return res ;
+}
