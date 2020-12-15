@@ -311,3 +311,8 @@ function splitInteger(num, parts) {
   for (var i = 0; i < (num % parts); i++) { res[i]++; }
   return res;
 } 
+
+// https://www.codewars.com/kata/52210226578afb73bd0000f1/javascript
+function electrons_around_the_cores( dices ){
+  return dices.reduce((a, b) => a + (b & 1? b - 1: 0), 0);
+}
