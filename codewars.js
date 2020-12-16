@@ -316,3 +316,20 @@ function splitInteger(num, parts) {
 function electrons_around_the_cores( dices ){
   return dices.reduce((a, b) => a + (b & 1? b - 1: 0), 0);
 }
+
+// https://www.codewars.com/kata/55e7280b40e1c4a06d0000aa/solutions/javascript
+function chooseBestSum(t, k, ls) {
+  let biggestCount = 0, recurseTowns = function(townsSoFar, lastIndex) {
+    townsSoFar = townsSoFar || [];
+    if (townsSoFar.length === k) {
+      let sumDistance = townsSoFar.reduce((a,b)=>a+b);
+      if (sumDistance <= t && sumDistance > biggestCount)
+        biggestCount = sumDistance;
+      return;
+    }
+    for (var i = lastIndex + 1 || 0; i < ls.length; i++)
+      recurseTowns(townsSoFar.concat(ls[i]), i);
+  }
+  recurseTowns();
+  return biggestCount || null;
+} 
