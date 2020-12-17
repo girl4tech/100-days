@@ -333,3 +333,8 @@ function chooseBestSum(t, k, ls) {
   recurseTowns();
   return biggestCount || null;
 } 
+
+// https://www.codewars.com/kata/588fe9eaadbbfb44b70001fc
+function readZalgo(zalgotext) {
+  return zalgotext.replace( /[^\w.,!? ]/g, "" );
+}
