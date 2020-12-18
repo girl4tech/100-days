@@ -338,3 +338,14 @@ function chooseBestSum(t, k, ls) {
 function readZalgo(zalgotext) {
   return zalgotext.replace( /[^\w.,!? ]/g, "" );
 }
+
+// https://www.codewars.com/kata/55be10de92aad5ef28000023/javascript
+function checkchoose(m, n) {
+  let x = 1;
+  for (let i = 1; i < n; i++) {
+    x = Math.round(x * (n + 1 - i) / i)
+    if (x == m) 
+      return i;
+  }
+  return -1;
+}
