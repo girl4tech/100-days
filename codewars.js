@@ -349,3 +349,9 @@ function checkchoose(m, n) {
   }
   return -1;
 }
+
+// https://www.codewars.com/kata/59128363e5bc24091a00006f/javascript
+let theJanitor = word => [...'abcdefghijklmnopqrstuvwxyz'].map(l=>{
+    let a = word.indexOf(l), b = word.lastIndexOf(l);
+    return a === -1 ? 0 : b - a + 1;
+}); 
