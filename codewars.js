@@ -355,3 +355,9 @@ let theJanitor = word => [...'abcdefghijklmnopqrstuvwxyz'].map(l=>{
     let a = word.indexOf(l), b = word.lastIndexOf(l);
     return a === -1 ? 0 : b - a + 1;
 }); 
+
+// https://www.codewars.com/kata/5ac739ed3fdf73d3f0000048/javascript
+const Not = A => A(False)(True);
+const And = A => B => A(B)(A);
+const Or = A => B => A(A)(B);
+const Xor = A => B => A(Not(B))(B);
