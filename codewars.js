@@ -366,3 +366,10 @@ const Xor = A => B => A(Not(B))(B);
 function potatoes(p0, w0, p1) {
   return Math.floor(w0 * (100 - p0) / (100 - p1))
 }
+
+// https://www.codewars.com/kata/5fc7caa854783c002196f2cb/javascript
+function speedify(s) {
+  let arr = Array(s.length+26).fill(' ');
+  [...s].forEach((char,ind)=>arr[ind+char.charCodeAt()-65]=char);
+  return arr.join('').trimRight();
+} 
