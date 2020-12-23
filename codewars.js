@@ -383,3 +383,9 @@ function removeNb (n) {
   }
   return results;
 } 
+
+// https://www.codewars.com/kata/57f75cc397d62fc93d000059
+function calc(x){
+  let a = x.replace(/./g,x=>x.charCodeAt()).match(/7/g)||[]
+   return a.length*6; 
+}
