@@ -373,3 +373,13 @@ function speedify(s) {
   [...s].forEach((char,ind)=>arr[ind+char.charCodeAt()-65]=char);
   return arr.join('').trimRight();
 } 
+
+// https://www.codewars.com/kata/5547cc7dcad755e480000004/javascript
+function removeNb (n) {
+  let results = [];
+  for (var a = 1; a <= n; a++) {
+    var b = (n * (n + 1) / 2 - a) / (a + 1);
+    if (b % 1 === 0 && b <= n) results.push([a, b]);
+  }
+  return results;
+} 
