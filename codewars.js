@@ -389,3 +389,12 @@ function calc(x){
   let a = x.replace(/./g,x=>x.charCodeAt()).match(/7/g)||[]
    return a.length*6; 
 }
+
+// https://www.codewars.com/kata/5fde1ea66ba4060008ea5bd9/javascript
+function burner(c, h, o) {
+  let water = Math.floor(Math.min(h/2,o));
+  o = o - water
+  h = h - water * 2
+  let co2 = Math.floor(Math.min(c,o/2)), methane = Math.floor(Math.min(c,h/4))
+  return [water, co2, methane];
+} 
