@@ -398,3 +398,10 @@ function burner(c, h, o) {
   let co2 = Math.floor(Math.min(c,o/2)), methane = Math.floor(Math.min(c,h/4))
   return [water, co2, methane];
 } 
+
+// https://www.codewars.com/kata/52f5424d0531259cfc000d04/javascript
+function sortByBit(array) {
+  return array.reduce(function(n, i) {
+    return n | (1 << i)
+  }, 0)
+} 
