@@ -405,3 +405,13 @@ function sortByBit(array) {
     return n | (1 << i)
   }, 0)
 } 
+
+// https://www.codewars.com/kata/55a29405bc7d2efaff00007c/javascript
+function going(n) {
+    let result =1, a = 1;
+    for(let i=0; i < n-1; i++) {
+      a = a/(n-i);
+      result = result+a;
+    }
+    return Math.floor(result*1000000)/1000000;
+} 
