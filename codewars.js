@@ -415,3 +415,9 @@ function going(n) {
     }
     return Math.floor(result*1000000)/1000000;
 } 
+
+// https://www.codewars.com/kata/52b305bec65ea40fe90007a7/javascript
+function grabscrab(anagram, dictionary) {
+    anagram = anagram.split('').sort().join('');
+    return dictionary.filter(el => el.length == anagram.length && el.split('').sort().join('') == anagram);
+}
