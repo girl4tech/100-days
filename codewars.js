@@ -421,3 +421,8 @@ function grabscrab(anagram, dictionary) {
     anagram = anagram.split('').sort().join('');
     return dictionary.filter(el => el.length == anagram.length && el.split('').sort().join('') == anagram);
 }
+
+// https://www.codewars.com/kata/5727bb0fe81185ae62000ae3
+function cleanString(s) {
+  return s.split('').reduce((result, char) => char == '#' ? result.slice(0, -1) : result + char, '');
+}
