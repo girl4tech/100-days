@@ -426,3 +426,8 @@ function grabscrab(anagram, dictionary) {
 function cleanString(s) {
   return s.split('').reduce((result, char) => char == '#' ? result.slice(0, -1) : result + char, '');
 }
+
+// https://www.codewars.com/kata/5db19d503ec3790012690c11/train/javascript
+function weight(n, w) {
+    return w * (Math.exp(2) - 3) * (1 - Math.exp(-2*n))/(4 * (Math.exp(2) - 1));
+}
