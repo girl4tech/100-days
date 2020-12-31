@@ -431,3 +431,8 @@ function cleanString(s) {
 function weight(n, w) {
     return w * (Math.exp(2) - 3) * (1 - Math.exp(-2*n))/(4 * (Math.exp(2) - 1));
 }
+
+// https://www.codewars.com/kata/56d8f14cba01a83cdb0002a2
+const getPositions = s => {
+    return [(s % 3), Math.floor(s/3) % 3, Math.floor(s/9) % 3];
+}
