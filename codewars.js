@@ -436,3 +436,8 @@ function weight(n, w) {
 const getPositions = s => {
     return [(s % 3), Math.floor(s/3) % 3, Math.floor(s/9) % 3];
 }
+
+//https://www.codewars.com/kata/59c633e7dcc4053512000073/javascript
+function solve(s) {
+  return Math.max(...s.split(/[aeiou]+/).map(group => group.split('').reduce((a,b) =>a + b.charCodeAt()-96,0)));
+}; 
