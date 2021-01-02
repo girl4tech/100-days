@@ -441,3 +441,22 @@ const getPositions = s => {
 function solve(s) {
   return Math.max(...s.split(/[aeiou]+/).map(group => group.split('').reduce((a,b) =>a + b.charCodeAt()-96,0)));
 }; 
+
+// https://www.codewars.com/kata/5279f6fe5ab7f447890006a7
+function pickPeaks(arr){
+  let result = {pos: [], peaks: []};
+  if(arr.length > 2) {
+    var pos = -1;
+    for(let i=1; i<arr.length;i++){
+      if(arr[i] > arr[i-1]) {
+        pos = i;
+      } 
+      if(arr[i] < arr[i-1] && pos != -1) {
+        result.pos.push(pos);
+        result.peaks.push(arr[pos]);
+        pos = -1;
+      }
+    }
+  }
+  return result;
+} 
