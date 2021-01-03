@@ -460,3 +460,14 @@ function pickPeaks(arr){
   }
   return result;
 } 
+
+// https://www.codewars.com/kata/596f72bbe7cd7296d1000029/javascript
+function deepCount(arr) {
+    let temp = 0;
+    for(let i = 0; i < arr.length; i++) {
+        if(Array.isArray(arr[i]))
+            temp += deepCount(arr[i]);
+        temp++;
+    }
+    return temp;
+}
