@@ -476,3 +476,11 @@ function deepCount(arr) {
 function createArrayOfTiers(num) {
   return Array.prototype.map.call(num.toString(), (_, i, s) => s.slice(0, i + 1));
 }
+
+// https://www.codewars.com/kata/535bea76cdbf50281a00004c/javascript
+function towerCombination(n) {
+  let num = 1;
+  for(let i = 2; i <= n; i++) 
+    num *= i;
+  return num;
+} 
