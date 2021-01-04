@@ -471,3 +471,8 @@ function deepCount(arr) {
     }
     return temp;
 }
+
+// https://www.codewars.com/kata/586bca7fa44cfc833e00005c/javascript
+function createArrayOfTiers(num) {
+  return Array.prototype.map.call(num.toString(), (_, i, s) => s.slice(0, i + 1));
+}
