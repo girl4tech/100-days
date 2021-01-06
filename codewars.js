@@ -484,3 +484,13 @@ function towerCombination(n) {
     num *= i;
   return num;
 } 
+
+// https://www.codewars.com/kata/56662e268c0797cece0000bb/javascript
+function sumFibs(n) {
+  let [a, b, res] = [1, 1, 0];
+  while (n--) {
+    if (a % 2 == 0) res += a;
+    [a, b] = [b, a+b];
+  }
+  return res;
+}; 
