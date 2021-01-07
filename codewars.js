@@ -494,3 +494,14 @@ function sumFibs(n) {
   }
   return res;
 }; 
+
+// https://www.codewars.com/kata/5ff22b6e833a9300180bb953/javascript
+function differences(a) {
+  while(a.length > 1) {
+    for(let i = 0; i < a.length - 1; i++) {
+      a[i] = Math.abs(a[i] - a[i + 1]);
+    }
+    a.length = a.length - 1;
+  }
+  return a[0];
+}
