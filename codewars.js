@@ -505,3 +505,8 @@ function differences(a) {
   }
   return a[0];
 }
+
+// https://www.codewars.com/kata/5e2c7639b5d728001489d910/javascript
+function getProductId(url){
+  return url.split('-').reverse()[1]; 
+}
