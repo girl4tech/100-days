@@ -520,3 +520,13 @@ function score(obj) {
 function scoring(arr) {
     return arr.sort((a,b) => score(b)-score(a)).map(a=>a.name);
 } 
+
+// https://www.codewars.com/kata/52cd53948d673a6e66000576/javascript
+// TITLES is a preloaded array of String to search throught
+function search(searchTerm) {
+  var search = new RegExp(searchTerm, 'i');
+  
+  return TITLES.filter(function(title) {
+    return search.test(title);
+  });
+}
