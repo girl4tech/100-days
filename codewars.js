@@ -535,3 +535,13 @@ function search(searchTerm) {
 var countBits = function(n) {
   return +(n.toString(2).split("").reduce( (a, b) => +a + +b));
 };
+
+// https://www.codewars.com/kata/536c6b8749aa8b3c2600029a/javascript
+function sortString(str, ordering ) {
+  let arr = str.split(""), s = "";
+  for (let o of ordering )
+    while (arr.includes(o))
+      s += arr.splice( arr.indexOf(o), 1 )[0];
+  s += arr.join("");
+  return s;
+}
