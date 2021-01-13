@@ -545,3 +545,12 @@ function sortString(str, ordering ) {
   s += arr.join("");
   return s;
 }
+
+// https://www.codewars.com/kata/5ff50f64c0afc50008861bf0/javascript
+function fourSeven(n){
+  let results = {
+    7 : 4,
+    4 : 7,
+  }
+  return results[n] || 0
+}
