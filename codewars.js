@@ -554,3 +554,10 @@ function fourSeven(n){
   }
   return results[n] || 0
 }
+
+// https://www.codewars.com/kata/566be96bb3174e155300001b/javascript
+function maxBall(v0) {
+  v0 *= 1000/360;
+  const g = 9.81, secondsToTenths = 10;
+  return Math.round(v0/g);
+} 
