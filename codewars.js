@@ -561,3 +561,15 @@ function maxBall(v0) {
   const g = 9.81, secondsToTenths = 10;
   return Math.round(v0/g);
 } 
+
+// https://www.codewars.com/kata/5fc7d2d2682ff3000e1a3fbc/javascript
+function isAValidMessage(message){
+  while (message.length > 0) {
+    let num = parseInt(message);
+    message = message.slice((num + "").length);
+    let str = message.slice(0, num), regex = RegExp('^[a-zA-Z]{' + num + '}$')
+    if (!regex.test(str)) return false;
+    message = message.slice(num);
+  }
+  return true;
+} 
