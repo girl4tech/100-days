@@ -573,3 +573,8 @@ function isAValidMessage(message){
   }
   return true;
 } 
+
+// https://www.codewars.com/kata/57a62154cf1fa5b25200031e/javascript
+let alternateCase = s => s.split('').map(function(el) {
+    return el === el.toUpperCase() ? el.toLowerCase() : el.toUpperCase();
+}).join('');
