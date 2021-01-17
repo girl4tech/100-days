@@ -578,3 +578,18 @@ function isAValidMessage(message){
 let alternateCase = s => s.split('').map(function(el) {
     return el === el.toUpperCase() ? el.toLowerCase() : el.toUpperCase();
 }).join('');
+
+// https://www.codewars.com/kata/58235a167a8cb37e1a0000db/javascript
+function numberOfPairs(gloves) {
+  let object = {};
+  let result = 0;
+
+  for (let glove of gloves) {
+    object[glove] = object[glove] + 1 || 1;
+  }
+
+  for (let glove in object) {
+    result += Math.floor(object[glove] / 2);
+  }
+  return result;
+}
