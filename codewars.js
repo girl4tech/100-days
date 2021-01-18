@@ -593,3 +593,25 @@ function numberOfPairs(gloves) {
   }
   return result;
 }
+
+// https://www.codewars.com/kata/57e2afb6e108c01da000026e/javascript
+const numbers = {
+    1: 'One',
+    2: 'Two',
+    3: 'Three',
+    4: 'Four',
+    5: 'Five',
+    6: 'Six',
+    7: 'Seven',
+    8: 'Eight',
+    9: 'Nine',
+    10: 'Ten'
+  };
+
+function expressionOut(expr) {
+  let error = '', result = expr.split(' ')
+    .map((e, i) => ((i % 2) ? OPERATORS[e] : numbers[e]) || (error = "That's not an operator!"))
+    .join(' ')
+    .replace(/\s+/g, ' ');
+   return error || result;
+} 
