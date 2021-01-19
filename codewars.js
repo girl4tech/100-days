@@ -615,3 +615,10 @@ function expressionOut(expr) {
     .replace(/\s+/g, ' ');
    return error || result;
 } 
+
+// https://www.codewars.com/kata/5ff6060ed14f4100106d8e6f/javascript
+function uncensor(infected, discovered) {
+  for (let i = 0; i < discovered.length; i++)
+    infected = infected.replace(/(\*)/, `${discovered[i]}`); 
+  return infected;
+} 
