@@ -637,3 +637,20 @@ function looseChange(cents){
   obj.Quarters = Math.floor(cents/25);
   return obj;
 } 
+
+// https://www.codewars.com/kata/51e0007c1f9378fa810002a9/javascript
+// Return the output array, and ignore all non-op characters
+function parse(data) {
+  let res = [];
+
+  data.split('').reduce((current, s) => {
+    if (s === 'i') current++;
+    if (s === 'd') current--;
+    if (s === 's') current = Math.pow(current, 2);
+    if (s === 'o') res.push(current);
+
+    return current;
+  }, 0);
+
+  return res;
+} 
