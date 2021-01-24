@@ -657,3 +657,16 @@ function parse(data) {
 
 // https://www.codewars.com/kata/55a5bfaa756cfede78000026/javascript
 let problem = x => typeof x === 'string' ? 'Error' : x * 50 + 6; 
+
+// https://www.codewars.com/kata/56a5d994ac971f1ac500003e/javascript
+function longestConsec(strarr, k) {
+  if(strarr === [] || k > strarr.length || k <= 0) { return ""; }
+  let str = "";
+    for(let i = 0; i < strarr.length; i++){
+      let temp = strarr.slice(i,i+k).join("");
+      if(temp.length > str.length) {
+        str = temp;
+      }
+    }
+    return str;
+}
