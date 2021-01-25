@@ -670,3 +670,6 @@ function longestConsec(strarr, k) {
     }
     return str;
 }
+
+// https://www.codewars.com/kata/5b049d57de4c7f6a6c0001d7/javascript
+let apparently = s => s.replace(/\b(and|but)\b(?! apparently\b)/g,'$& apparently'); 
