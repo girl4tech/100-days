@@ -685,3 +685,15 @@ function getExponent(n, p) {
     }
     return num;
 }
+
+// https://www.codewars.com/kata/5720eb05e8d6c5b24a0014c5/javascript
+function scoreMatrix(matrix) {
+    let score = 0;
+    for (let i = 0; i <= matrix.length - 1; i++) {
+        let addRow = 0;
+        for (let j = 0; j <= matrix[i].length - 1; j ++)
+            addRow += (Math.pow(-1,i+j + 2)) * matrix[i][j];
+        score += addRow;
+    }
+    return score;
+} 
