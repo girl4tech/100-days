@@ -673,3 +673,15 @@ function longestConsec(strarr, k) {
 
 // https://www.codewars.com/kata/5b049d57de4c7f6a6c0001d7/javascript
 let apparently = s => s.replace(/\b(and|but)\b(?! apparently\b)/g,'$& apparently'); 
+
+// https://www.codewars.com/kata/59b139d69c56e8939700009d/javascript
+function getExponent(n, p) {
+    if(p < 2) { return null; }
+    let num = 0;
+    
+    while(n % p === 0) {
+        num++;
+        n/=p;
+    }
+    return num;
+}
