@@ -697,3 +697,14 @@ function scoreMatrix(matrix) {
     }
     return score;
 } 
+
+// https://www.codewars.com/kata/59f7597716049833200001eb/javascript
+function solve(x, y) {
+  let obj = {0: 0, 1: 1, 6: 9, 8: 8, 9: 6}, count = 0;
+  for (let i = x; i < y; i++) {
+    let same = i.toString(), upsideDown = same.split('').reverse().map(value => obj[value]).join('');
+    if (same === upsideDown) 
+      count++;
+  }
+  return count;
+} 
