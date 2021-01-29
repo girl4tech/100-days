@@ -708,3 +708,8 @@ function solve(x, y) {
   }
   return count;
 } 
+
+// https://www.codewars.com/kata/58845a92bd573378f4000035/javascript
+function swapAdjacentBits(n) {
+  return (n & 0xAAAAAAAA) >> 1 | (n & 0x55555555) << 1
+}
