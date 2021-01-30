@@ -713,3 +713,96 @@ function solve(x, y) {
 function swapAdjacentBits(n) {
   return (n & 0xAAAAAAAA) >> 1 | (n & 0x55555555) << 1
 }
+
+// https://www.codewars.com/kata/55beec7dd347078289000021/javascript
+function Node(data, next = null) {
+  this.data = data;
+  this.next = next;
+}
+
+function length(head) {
+  let length = 1;
+  if(head === null) { return 0;}
+  while(head.next !== null) {
+    head = head.next;
+    length++;
+  }
+  return length;
+}
+
+function count(head, data) {
+  let count = 0;
+  if(head === null) return 0;
+  while(head !== null){
+    if(head.data === data){
+      count++
+    }
+    head = head.next;
+  }
+  return count;  
+}
+
+// above can be refactored using recursion:
+ function Node(data) {
+  this.data = data;
+  this.next = null;
+}
+
+function length(head) {
+  return (head) ? 1 + length(head.next) : 0;
+}
+
+function count(head, data) {
+  return (head) ? + (head.data === data) + count(head.next, data) : 0;
+}
+
+// https://www.codewars.com/kata/55be95786abade3c71000079/javascript
+function Node(data) {
+  this.data = data;
+  this.next = null;
+}
+function push(head, data) {
+  let node = new Node(data);
+  node.next = head;
+  return node;
+}
+function buildOneTwoThree(){
+  return push(push(new Node(3), 2), 1);
+}
+
+// "Please Implement a Linked List Including it's helper methods: size, clear, getLast, getFirst"
+class Node {
+    constructor(data) {
+        this.data = data
+        this.next = null                
+    }
+}
+class LinkedList {
+    constructor(head = null) {
+        this.head = head
+    }  
+    size() {
+      let count = 0; 
+      let node = this.head;
+      while (node) {
+        count++;
+        node = node.next
+      }
+      return count;
+  }
+  clear() {
+    this.head = null;
+}
+getLast() {
+    let lastNode = this.head;
+    if (lastNode) {
+        while (lastNode.next) {
+            lastNode = lastNode.next
+        }
+    }
+    return lastNode
+}
+getFirst() {
+    return this.head;
+} 
+} 
